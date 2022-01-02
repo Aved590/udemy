@@ -1,0 +1,1 @@
+student_heights = input("Enter height in CM, seperated by comm")
