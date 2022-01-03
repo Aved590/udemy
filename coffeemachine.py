@@ -99,31 +99,3 @@ while is_on:
                 print("Enjoy your drink")
 
 
-
-
-
-
-    elif choice == "espresso":
-        drink = MENU[choice]
-        print(drink)
-        if chk_resources(drink["ingredients"]):
-            print("There are enough resources")
-        else:
-            print("Not enough resources")
-
-
-
-    elif choice == "latte":
-
-
-    elif choice == "cappuccino":
-        drink = MENU[choice]
-        print(drink)
-        if chk_resources(drink["ingredients"]):
-            print("There are enough resources")
-        else:
-            print("Not enough resources")
-  
-
-    else:
-        print("Invalid choice, try again")
