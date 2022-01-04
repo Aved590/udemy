@@ -5,32 +5,42 @@ numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 print("Welcome to the PyPassword Generator!")
-nr_letters= int(input("How many letters would you like in your password?\n"))
+nr_letters = int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-#Eazy Level - Order not randomised:
-#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-pwd = []
-cnt_letters = len(letters)
-cnt_numbers = len(numbers)
-cnt_symbols = len(symbols)
+#Eazy Level
+# password = ""
 
-pwd = ""
-for i in range(1,nr_letters+1):
-    pwd += random.choice(letters)
+# for char in range(1, nr_letters + 1):
+#   password += random.choice(letters)
 
-for i in range(1,nr_symbols+1):
-    pwd += random.choice(symbols)
+# for char in range(1, nr_symbols + 1):
+#   password += random.choice(symbols)
 
-for i in range(1,nr_numbers+1):
-    pwd += random.choice(numbers)
+# for char in range(1, nr_numbers + 1):
+#   password += random.choice(numbers)
 
+# print(password)
 
-print(pwd)
+#Hard Level
+password_list = []
 
-#pwd = random.sample(pwd,len(pwd))
+for char in range(1, nr_letters + 1):
+  password_list.append(random.choice(letters))
 
-#pwdstr = ''.join(map(str,pwd))
+for char in range(1, nr_symbols + 1):
+  password_list += random.choice(symbols)
 
-#print(pwdstr)
+for char in range(1, nr_numbers + 1):
+  password_list += random.choice(numbers)
+
+print(password_list)
+random.shuffle(password_list)
+print(password_list)
+
+password = ""
+for char in password_list:
+  password += char
+
+print(f"Your password is: {password}")
